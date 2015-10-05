@@ -88,3 +88,8 @@
 <form action="/delete" method="post">
   <button type="submit">Delete!</button>
 </form>
+<% if @new && @new.errors.any? %>
+<% @new.errors.messages.each do |x| %>
+  <p><%= x %></p>
+<%end%>
+<%end%>

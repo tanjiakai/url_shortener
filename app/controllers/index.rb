@@ -18,7 +18,7 @@ post '/urls' do
   @new = Url.create(url: params[:url])
   p "[LOG] Errors? = #{@new.errors.any?}"
   if @new.errors.any?
-    @url = Url.all.order(:id)
+    @urls = Url.all.order(:id)
     erb :index
   else
     redirect to '/'
